@@ -32,6 +32,19 @@ namespace Webshop18AO
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(60*60);
+                options.Cookie.HttpOnly = true;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
+
+
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -57,6 +70,8 @@ namespace Webshop18AO
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             Seed.SeedData(context);
 

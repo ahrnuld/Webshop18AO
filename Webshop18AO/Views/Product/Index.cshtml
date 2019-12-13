@@ -42,7 +42,7 @@
                                         <p class="btn btn-danger btn-block">Prijs: @item.Price.ToString("c")</p>
                                     </div>
                                     <div class="col">
-                                        <a href="#" class="btn btn-success btn-block">In winkelwagen</a>
+                                        <a asp-action="AddToCart" asp-route-id="@item.Id" class="btn btn-success btn-block">In winkelwagen</a>
                                     </div>
                                 </div>
                             </div>
