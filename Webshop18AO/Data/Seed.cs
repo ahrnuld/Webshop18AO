@@ -10,6 +10,9 @@ namespace Webshop18AO.Data
     {
         public static void SeedData(ApplicationDbContext context)
         {
+            if (context.Category.Count() > 0)
+                return;
+
             Category catRts = new Category { Name = "Real time strategy" };
             Category catRpg = new Category { Name = "Role playing game" };
             Category catAction = new Category { Name = "Action" };
