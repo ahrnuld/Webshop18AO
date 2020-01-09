@@ -15,5 +15,7 @@ namespace Webshop18AO.Data
         }
         public DbSet<Webshop18AO.Models.Category> Category { get; set; }
         public DbSet<Webshop18AO.Models.Product> Product { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
     }
 }
