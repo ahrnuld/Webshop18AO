@@ -1,5 +1,5 @@
 # Webshop18AO
-> A .NET Core 3.0 project
+A .NET Core 3.0 project
 
 # About this project
 This is a demo project of a simple webshop built with C# and the .NET Core 3.0 framework. 
